@@ -1,0 +1,22 @@
+<h2>Estudiantes</h2>
+<ul class="students">
+    <li *ngFor="let student of students | async" [class.selected]="student === selectedstudent"
+        (click)="onSelect(student)">
+        <span class="badge">{{student.id}}</span> {{student.name}}
+    </li>
+</ul>
+<hr>
+<form (ngSubmit)="filter()">
+    <input placeholder="GPA" required [formControl]="filterGpa" />
+    <br>
+    <input placeholder="Sexo" required [formControl]="filterSex" />
+    <br>
+    <button type="submit">Filtrar</button>
+</form>
+
+<hr>
+<div *ngIf="selectedStudent">
+
+    <app-student [student]="selectedStudent"></app-student>
+
+</div>

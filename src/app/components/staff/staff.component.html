@@ -1,0 +1,5 @@
+<div *ngIf="staff$| async as staff">
+    <h2>{{staff.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{staff.id}}</div>
+    <div><span>salary: </span>{{staff.salary}}</div>
+</div>
